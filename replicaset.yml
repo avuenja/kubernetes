@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: <replicaset_name>
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      name: <pod_name>
+  template:
+    metadata:
+      labels:
+        name: <pod_name>
+    spec:
+      containers:
+      - name: <pod_name>
+        image: <image>
